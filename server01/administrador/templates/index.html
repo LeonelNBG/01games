@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-
-<html>
+<html lang="es">
 
     <head>
 
@@ -15,13 +14,13 @@
 
     <body>
 
-        <a href="index.html"><div class="logo"></div></a>
+        <a href="index" class="logo"> <div class="logo"> </div> </a>
 
         <div class="barra">
 
-            <a href="comunidad.html" class="seccion"> Comunidad </a>
-            <a href="index.html" class="seccion"> Noticias </a>
-            <a href="foro.html" class="seccion"> Foro </a>
+            <a href="comunidad" class="seccion"> Comunidad </a>
+            <a href="index" class="seccion"> Noticias </a>
+            <a href="foro" class="seccion"> Foro </a>
 
         </div>
 
@@ -33,40 +32,66 @@
 
             </div>
 
-            <div class="aviso">
+            {% for v in datos %}
 
-                <strong>¡Avisos importantes!</strong><br /><br /> Página en etapa alfa <br /><br /> SOLO CONTENIDO DE RELLENO <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet ligula at consectetur sollicitudin. Vivamus vitae leo nec magna bibendum viverra condimentum sit amet dolor.
+                {% if v.nota != "" and v.titulo_nota != "" %}
 
-            </div>
+                    <div class="aviso">
 
-            <div class="posteo">
+                        <strong>{{v.titulo_nota}}</strong><br />
+                        <p>{{v.nota}}</p>
 
-                <div class="subtitulo">Noticia de ultima hora</div><br />
+                    </div>
 
-                <img src="../static/imagenes/gif_inicio2.gif" class="imagen"></img>
+                {% endif %}
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet ligula at consectetur sollicitudin. Vivamus vitae leo nec magna bibendum viverra condimentum sit amet dolor. Nullam condimentum convallis nunc nec ullamcorper. Duis tristique leo nisi, nec pulvinar mauris commodo vel. Nullam aliquam lacus quis eros sodales sollicitudin eu vehicula magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin aliquet tincidunt sem ut finibus. Nunc quis enim at sem accumsan convallis. Sed fermentum euismod facilisis. Cras volutpat, velit ut vulputate maximus, nisi tellus ullamcorper leo, eu tempus mi libero eget sapien. Fusce fermentum turpis in accumsan malesuada.
+                <div class="posteo">
 
-                Curabitur maximus mauris semper, aliquet lectus eget, sagittis metus. Sed vitae aliquam est, ut interdum libero. Nulla libero sapien, pretium a fermentum quis, iaculis non augue. Proin sit amet consectetur diam, non sollicitudin magna. Maecenas a tincidunt ipsum, non euismod nunc. Sed blandit fringilla enim vel maximus. Etiam ultricies rutrum est. Mauris porttitor, urna at dignissim condimentum, odio dui pellentesque justo, vitae dapibus libero dolor et nunc.
+                    <p class="subtitulo">
+                        
+                        {{v.titulo}}
+                    
+                    </p>
 
-                Sed suscipit rutrum dolor, vitae tempus leo gravida et. Cras consequat elementum augue, nec ultricies sapien commodo sit amet. In condimentum tortor sit amet dolor rhoncus rutrum. Nam porta turpis hendrerit sagittis rutrum. Curabitur rutrum velit nibh, in venenatis turpis fermentum in. Donec ligula nunc, placerat eget risus vel, efficitur ullamcorper tellus. Vivamus posuere, dolor vel tincidunt fermentum, nisl erat pretium velit, vel hendrerit lorem sapien at urna. Curabitur eget neque sagittis, auctor eros id, rhoncus nisi.
+                    <p style="text-align: center;">
 
-            </div>
+                        {{v.fecha}}
 
-            <div class="posteo">
+                    </p>
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet ligula at consectetur sollicitudin. Vivamus vitae leo nec magna bibendum viverra condimentum sit amet dolor. Nullam condimentum convallis nunc nec ullamcorper. Duis tristique leo nisi, nec pulvinar mauris commodo vel. Nullam aliquam lacus quis eros sodales sollicitudin eu vehicula magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin aliquet tincidunt sem ut finibus. Nunc quis enim at sem accumsan convallis. Sed fermentum euismod facilisis. Cras volutpat, velit ut vulputate maximus, nisi tellus ullamcorper leo, eu tempus mi libero eget sapien. Fusce fermentum turpis in accumsan malesuada.
+                    <div style="display: block; ">
 
-                Curabitur maximus mauris semper, aliquet lectus eget, sagittis metus. Sed vitae aliquam est, ut interdum libero. Nulla libero sapien, pretium a fermentum quis, iaculis non augue. Proin sit amet consectetur diam, non sollicitudin magna. Maecenas a tincidunt ipsum, non euismod nunc. Sed blandit fringilla enim vel maximus. Etiam ultricies rutrum est. Mauris porttitor, urna at dignissim condimentum, odio dui pellentesque justo, vitae dapibus libero dolor et nunc.
+                        {% if v.img != "" %}
+                        
+                            <img src = '../static/imagenes/descargado/{{v.img}}' class = 'imagen'></img>
 
-                Sed suscipit rutrum dolor, vitae tempus leo gravida et. Cras consequat elementum augue, nec ultricies sapien commodo sit amet. In condimentum tortor sit amet dolor rhoncus rutrum. Nam porta turpis hendrerit sagittis rutrum. Curabitur rutrum velit nibh, in venenatis turpis fermentum in. Donec ligula nunc, placerat eget risus vel, efficitur ullamcorper tellus. Vivamus posuere, dolor vel tincidunt fermentum, nisl erat pretium velit, vel hendrerit lorem sapien at urna. Curabitur eget neque sagittis, auctor eros id, rhoncus nisi.
+                        {% endif %}
 
-            </div>
+                        <p>
 
+                            {{v.contenido}}
+            
+                        </p>
 
+                    </div>
+
+                    <br />
+
+                    <p>
+
+                        - {{v.autor}}
+
+                    </p>
+
+                </div>
+
+                <br />
+
+            {% endfor %}
 
         </div>
 
+        
 
     </body>
 

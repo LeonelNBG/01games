@@ -1,16 +1,12 @@
-"""
-WSGI config for server01 project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
-"""
-
 import os
+import sys
+
+path = '/home/leonelNBG/01games/server01'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'server01.settings'
 
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server01.settings')
 
 application = get_wsgi_application()

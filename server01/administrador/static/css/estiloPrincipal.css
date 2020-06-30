@@ -1,4 +1,17 @@
 
+:root{
+
+    all:unset;
+
+    --color_texto: rgb(183, 248, 248);
+    --color_titulo: rgb(141, 33, 141);
+    --color_fondo_1: rgba(0, 50, 150, 0.8);
+    --color_fondo_2: rgba(41, 39, 39, 0.7);
+    --color_fondo_3: rgba(63, 13, 63, 0.7);
+
+}
+
+
 body{
 
     background-image: url("../imagenes/fondo1.jpg");
@@ -9,7 +22,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
 
-    color: rgb(183, 248, 248);
+    color: var(--color_texto);
 
     padding: 1%;
 
@@ -28,7 +41,7 @@ body{
 
     border: 2px solid #222121;
 
-    background-color: rgba(60, 30, 60, 0.8);
+    background-color: var(--color_fondo_3);
 
     border-radius: 5px;
 
@@ -49,7 +62,7 @@ body{
 
     float: left;
 
-    background-color: rgba(0, 50, 150, 0.8);
+    background-color: var(--color_fondo_1);
 
     height: 100%;
     width: 250px;
@@ -57,7 +70,7 @@ body{
     text-align: center;
     font-size: 250%;
 
-    color: rgb(183, 248, 248);
+    color: var(--color_texto);
 
     box-shadow: 4px 4px #000;
 
@@ -79,7 +92,7 @@ body{
 
     float: left;
 
-    background-color: rgb(141, 33, 141);
+    background-color: var(--color_titulo);
 
     height: 100%;
     width: 250px;
@@ -88,7 +101,7 @@ body{
     text-shadow: 5px 5px 10px #000;
     font-size: 250%;
 
-    color: rgb(183, 248, 248);
+    color: var(--color_texto);
 
     box-shadow: -2px -2px #000;
 
@@ -111,7 +124,7 @@ body{
 
     background-repeat: no-repeat;
 
-    box-shadow: 0px 0px 40px 10px rgb(141, 33, 141);
+    box-shadow: 0px 0px 40px 10px var(--color_titulo);
 
 }
 
@@ -131,13 +144,16 @@ body{
 
     background-repeat: no-repeat;
 
-    box-shadow: 0px 0px 40px 25px rgb(141, 33, 141);
+    box-shadow: 0px 0px 40px 25px var(--color_titulo);
+
+    transform: rotate(-4deg);
 
     }
 
 .textos{
 
-    display: center;
+    display:block;
+    margin:auto;
 
     padding: 10px;
 
@@ -149,10 +165,15 @@ body{
 
     background-repeat: repeat-y;
 
+}
 
+::selection{
 
+    color: var(--color_titulo);
+    background-color: var(--color_texto);
 
 }
+
 
 .titulo{
 
@@ -165,11 +186,11 @@ body{
 
     margin-bottom: 1%;
 
-    background-color: rgba(41, 39, 39, 0.7);
+    background-color: var(--color_fondo_2);
 
-    color: rgb(141, 33, 141);
+    color: var(--color_titulo);
 
-    text-shadow: 5px 5px 5px darkblue;
+    text-shadow: 5px 5px 5px var(--color_fondo_1);
 
     text-align: center;
 
@@ -186,8 +207,8 @@ body{
 
     width: 90%;
 
-    color: white;
-    text-shadow: 1px 1px 1px darkblue;
+    color: var(--color_texto);
+    text-shadow: 1px 1px 1px var(--color_fondo_1);
     text-align: center;
 
     font-size: 200%;
@@ -203,11 +224,11 @@ body{
 
     width: 75%;
 
-    background-color: rgba(41, 39, 39, 0.7);
+    background-color: var(--color_fondo_2);
 
     color: white;
 
-    text-shadow: 1px 1px 1px darkblue;
+    text-shadow: 1px 1px 1px var(--color_fondo_1);
 
     text-align: left;
 
@@ -218,6 +239,7 @@ body{
 
 }
 
+
 .imagen{
 
     padding: 1%;
@@ -227,7 +249,7 @@ body{
 
     float: left;
 
-    border: 1px solid rgba(60, 30, 60, 0.8);
+    border: 1px solid var(--color_fondo_3);
 
 
 }
@@ -245,7 +267,7 @@ body{
     display:block;
     margin:auto;
 
-    border: 1px solid rgba(60, 30, 60, 0.8);
+    border: 1px solid var(--color_fondo_3);
 
 }
 
@@ -257,11 +279,11 @@ body{
 
     padding: 0.25%;
 
-    width: 28%;
+    width: 20%;
 
-    background-color: rgba(60, 30, 60, 0.7);
+    background-color: var(--color_fondo_3);
 
-    border: 1px solid rgb(183, 248, 248);
+    border: 1px solid var(--color_texto);
 
     float: left;
 

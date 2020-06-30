@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import posteo, chat, comunicado
+
+admin.site.register(posteo)
+admin.site.register(chat)
+admin.site.register(comunicado)
+

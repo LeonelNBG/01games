@@ -14,13 +14,13 @@
 
     <body>
 
-        <a href="index.html"><div class="logo"></div></a>
+        <a href="index"><div class="logo"></div></a>
         
         <div class="barra">
 
-            <a href="comunidad.html" class="seccion"> Comunidad </a>
-            <a href="index.html" class="seccion"> Noticias </a>
-            <a href="foro.html" class="seccion"> Foro </a>
+            <a href="comunidad" class="seccion"> Comunidad </a>
+            <a href="index" class="seccion"> Noticias </a>
+            <a href="foro" class="seccion"> Foro </a>
 
         </div>
 
@@ -32,27 +32,54 @@
 
             </div>
 
-            <div class="aviso">
+            {% for c in comunicados %}
 
-                Los ganadores asi como el podio son anunciados un par de dias despues de la conclusión de la convocatoria...
+                {% if c.nota != "" and c.titulo_nota != "" %}
 
-            </div>
+                    <div class="aviso">
 
-            <div class="posteo">
+                        <strong>{{c.titulo_nota}}</strong><br />
+                        <p>{{c.nota}}</p>
 
-                <strong> Concurso Semanal !!!</strong> <br />
+                    </div>
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet ligula at consectetur sollicitudin. Vivamus vitae leo nec magna bibendum viverra condimentum sit amet dolor. Nullam condimentum convallis nunc nec ullamcorper. Duis tristique leo nisi, nec pulvinar mauris commodo vel. Nullam aliquam lacus quis eros sodales sollicitudin eu vehicula magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin aliquet tincidunt sem ut finibus. Nunc quis enim at sem accumsan convallis. Sed fermentum euismod facilisis. Cras volutpat, velit ut vulputate maximus, nisi tellus ullamcorper leo, eu tempus mi libero eget sapien. Fusce fermentum turpis in accumsan malesuada.
+                {% endif %}
 
-                Curabitur maximus mauris semper, aliquet lectus eget, sagittis metus. Sed vitae aliquam est, ut interdum libero. Nulla libero sapien, pretium a fermentum quis, iaculis non augue. Proin sit amet consectetur diam, non sollicitudin magna. Maecenas a tincidunt ipsum, non euismod nunc. Sed blandit fringilla enim vel maximus. Etiam ultricies rutrum est. Mauris porttitor, urna at dignissim condimentum, odio dui pellentesque justo, vitae dapibus libero dolor et nunc.
+                <div class="posteo">
 
-                Sed suscipit rutrum dolor, vitae tempus leo gravida et. Cras consequat elementum augue, nec ultricies sapien commodo sit amet. In condimentum tortor sit amet dolor rhoncus rutrum. Nam porta turpis hendrerit sagittis rutrum. Curabitur rutrum velit nibh, in venenatis turpis fermentum in. Donec ligula nunc, placerat eget risus vel, efficitur ullamcorper tellus. Vivamus posuere, dolor vel tincidunt fermentum, nisl erat pretium velit, vel hendrerit lorem sapien at urna. Curabitur eget neque sagittis, auctor eros id, rhoncus nisi.
+                    <p class="subtitulo">
+                        
+                        {{c.titulo}}
+                    
+                    </p>
+
+                    <p style="text-align: center;">
+
+                        {{c.fecha}}
+
+                    </p>
+
+                    <div style="display: block; ">
+
+                        <p>
+
+                            {{c.contenido}}
+            
+                        </p>
+
+                    </div>
+
+                    {% if c.img != "" %}
+                        
+                        <img src = '../static/imagenes/descargado/{{c.img}}' class = 'imagen_central'></img>
+
+                    {% endif %}
+
+                </div>
 
                 <br />
 
-                <img src="../static/imagenes/ganador.gif" class="imagen_central" />
-
-            </div>
+            {% endfor %}
 
 
 

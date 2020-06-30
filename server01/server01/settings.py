@@ -130,3 +130,6 @@ STATIC_DIRS = {
     os.path.join(BASE_DIR, 'static/imagenes/'),
     os.path.join(BASE_DIR, 'static/js/'),
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'administrador/static/imagenes/descargado')
+MEDIA_URL = '/descargado/'
